@@ -1,6 +1,5 @@
 ---
 title: Fraud Compliance RAG
-emoji: ??
 colorFrom: blue
 colorTo: green
 sdk: gradio
@@ -315,4 +314,5 @@ The current architecture is designed to make all of these extensions straightfor
 
 **Ghanashyam T V** — NLP + MLOps Engineer  
 [GitHub](https://github.com/shyam16843) · [LinkedIn](https://linkedin.com/in/ghanashyam-tv) · [Fraud Detection API](https://fraud-api-ul6d.onrender.com/docs)
+
 
