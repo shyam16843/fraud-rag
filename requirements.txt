@@ -5,7 +5,7 @@ langchain-chroma==0.2.6
 langchain-huggingface==0.3.1
 langchain-text-splitters==0.3.11
 chromadb==1.5.9
-sentence-transformers==2.2.2
+sentence-transformers>=3.0.0
 torch>=2.5.0
 transformers>=4.36.0
 groq==1.0.0
