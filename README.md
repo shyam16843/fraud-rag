@@ -1,18 +1,8 @@
----
-title: Fraud Compliance RAG
-colorFrom: blue
-colorTo: green
-sdk: gradio
-sdk_version: 5.9.1
-app_file: app.py
-pinned: false
-license: mit
----
 # 🏦 Fraud Compliance RAG
 
 **A regulatory intelligence system that answers fraud compliance questions using RBI, PCI-DSS, FATF, and SEBI guidelines — and explains why a fraud detection model flagged a transaction, with exact regulatory citations.**
 
-🚀 **Live Demo:** [huggingface.co/spaces/shyam16843/fraud-compliance-rag](https://huggingface.co/spaces/shyam16843/fraud-compliance-rag)  
+🚀 **Live Demo:** [shyam16843-fraud-compliance-rag.hf.space](https://shyam16843-fraud-compliance-rag.hf.space)  
 🔗 **Fraud Detection API:** [fraud-api-ul6d.onrender.com/docs](https://fraud-api-ul6d.onrender.com/docs)  
 👤 **Built by:** Ghanashyam T V — [github.com/shyam16843](https://github.com/shyam16843)
 
@@ -314,6 +304,3 @@ The current architecture is designed to make all of these extensions straightfor
 
 **Ghanashyam T V** — NLP + MLOps Engineer  
 [GitHub](https://github.com/shyam16843) · [LinkedIn](https://linkedin.com/in/ghanashyam-tv) · [Fraud Detection API](https://fraud-api-ul6d.onrender.com/docs)
-
-
-
