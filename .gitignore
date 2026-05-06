@@ -1,0 +1,29 @@
+# Virtual environment
+venv/
+env/
+.env
+
+# ChromaDB — rebuilt on first run, don't commit
+chroma_db/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Environment variables
+.env
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
