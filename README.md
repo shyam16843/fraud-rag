@@ -1,10 +1,20 @@
-# 🏦 Fraud Compliance RAG
+﻿---
+title: Fraud Compliance RAG
+colorFrom: blue
+colorTo: green
+sdk: gradio
+sdk_version: "5.29.0"
+app_file: app.py
+pinned: false
+license: mit
+---
+# ðŸ¦ Fraud Compliance RAG
 
-A regulatory intelligence system that answers fraud compliance questions using RBI, PCI-DSS, FATF, and SEBI guidelines — and explains why a fraud detection model flagged a transaction, with exact regulatory citations.
+A regulatory intelligence system that answers fraud compliance questions using RBI, PCI-DSS, FATF, and SEBI guidelines â€” and explains why a fraud detection model flagged a transaction, with exact regulatory citations.
 
-🚀 **Live Demo:** shyam16843-fraud-compliance-rag.hf.space  
-🔗 **Fraud Detection API:** fraud-api-ul6d.onrender.com/docs  
-👤 **Built by:** Ghanashyam T V — github.com/shyam16843
+ðŸš€ **Live Demo:** shyam16843-fraud-compliance-rag.hf.space  
+ðŸ”— **Fraud Detection API:** fraud-api-ul6d.onrender.com/docs  
+ðŸ‘¤ **Built by:** Ghanashyam T V â€” github.com/shyam16843
 
 ---
 
@@ -12,17 +22,17 @@ A regulatory intelligence system that answers fraud compliance questions using R
 
 Most RAG projects answer generic questions from uploaded PDFs. This one does something different:
 
-**Mode 1 — Ask a regulation question:**
+**Mode 1 â€” Ask a regulation question:**
 
 > "What makes a transaction suspicious under Indian banking law?"  
-> → Retrieves RBI Master Directions Sections 8, 12, and 15. Returns a cited answer with exact section references.
+> â†’ Retrieves RBI Master Directions Sections 8, 12, and 15. Returns a cited answer with exact section references.
 
-**Mode 2 — Explain a flagged fraud transaction:**
+**Mode 2 â€” Explain a flagged fraud transaction:**
 
 > "My model flagged a transaction with V14 = -4.28, probability = 0.999. Why?"  
-> → Retrieves FATF Fraud Typologies Chapter 3 (which explicitly identifies V14 as a fraud indicator) and RBI STR reporting requirements. Returns a full compliance report with regulatory justification.
+> â†’ Retrieves FATF Fraud Typologies Chapter 3 (which explicitly identifies V14 as a fraud indicator) and RBI STR reporting requirements. Returns a full compliance report with regulatory justification.
 
-The `/explain` endpoint connects directly to the Fraud Detection API — paste a flagged transaction output and get a regulatory explanation in return.
+The `/explain` endpoint connects directly to the Fraud Detection API â€” paste a flagged transaction output and get a regulatory explanation in return.
 
 ---
 
@@ -41,12 +51,12 @@ The `/explain` endpoint connects directly to the Fraud Detection API — paste a
 
 ## Key Features
 
-✅ **Section-level citations** — every answer cites exact RBI/FATF/SEBI/PCI-DSS section, not just "a document"  
-✅ **Zero hallucination** — tested across 10 Q&A pairs; all answers verifiable against source documents  
-✅ **Live API integration** — `/explain` endpoint connects directly to the Fraud Detection API; paste flagged features, get regulatory justification  
-✅ **Sub-3-second inference** — Groq + LLaMA 3.3 70B delivers production-grade response times at zero cost  
-✅ **India-first corpus** — RBI Master Directions + SEBI regulations alongside international FATF/PCI-DSS standards  
-✅ **Metadata-rich retrieval** — every chunk carries source, section, and page; citations are precise, not approximate  
+âœ… **Section-level citations** â€” every answer cites exact RBI/FATF/SEBI/PCI-DSS section, not just "a document"  
+âœ… **Zero hallucination** â€” tested across 10 Q&A pairs; all answers verifiable against source documents  
+âœ… **Live API integration** â€” `/explain` endpoint connects directly to the Fraud Detection API; paste flagged features, get regulatory justification  
+âœ… **Sub-3-second inference** â€” Groq + LLaMA 3.3 70B delivers production-grade response times at zero cost  
+âœ… **India-first corpus** â€” RBI Master Directions + SEBI regulations alongside international FATF/PCI-DSS standards  
+âœ… **Metadata-rich retrieval** â€” every chunk carries source, section, and page; citations are precise, not approximate  
 
 ---
 
@@ -54,21 +64,21 @@ The `/explain` endpoint connects directly to the Fraud Detection API — paste a
 
 ```
 User question OR fraud API output (V14, V12, V10 flags)
-              ↓
+              â†“
     LangChain query preprocessing
-              ↓
+              â†“
   HuggingFace sentence-transformers
      (all-MiniLM-L6-v2 embeddings)
-              ↓
+              â†“
   ChromaDB similarity search
-   → top 3 chunks with metadata
+   â†’ top 3 chunks with metadata
     (source, section, page number)
-              ↓
-   Groq API — LLaMA 3.3 70B
+              â†“
+   Groq API â€” LLaMA 3.3 70B
   answer generation with citations
-              ↓
+              â†“
   Answer + "Source: RBI Master Directions,
-            Section 12 — STR Reporting"
+            Section 12 â€” STR Reporting"
 ```
 
 ---
@@ -106,12 +116,12 @@ User question OR fraud API output (V14, V12, V10 flags)
 
 **Answer:**
 
-According to [FATF Fraud Typologies — Chapter 3], structuring is defined as breaking large transactions into smaller amounts to avoid detection thresholds. This is further supported by [RBI Master Directions — Section 12 — Suspicious Transaction Reporting], which identifies "multiple transactions just below the reporting threshold" as a key suspicious transaction indicator. Regulated entities are required to file Suspicious Transaction Reports (STRs) when structuring is detected.
+According to [FATF Fraud Typologies â€” Chapter 3], structuring is defined as breaking large transactions into smaller amounts to avoid detection thresholds. This is further supported by [RBI Master Directions â€” Section 12 â€” Suspicious Transaction Reporting], which identifies "multiple transactions just below the reporting threshold" as a key suspicious transaction indicator. Regulated entities are required to file Suspicious Transaction Reports (STRs) when structuring is detected.
 
 **Sources cited:**
-1. FATF Fraud Typologies — Chapter 3 — Payment Fraud Indicators
-2. RBI Master Directions on KYC — Section 12 — Suspicious Transaction Reporting
-3. SEBI Insider Trading Regulations — Regulation 6 — Suspicious Trading Patterns
+1. FATF Fraud Typologies â€” Chapter 3 â€” Payment Fraud Indicators
+2. RBI Master Directions on KYC â€” Section 12 â€” Suspicious Transaction Reporting
+3. SEBI Insider Trading Regulations â€” Regulation 6 â€” Suspicious Trading Patterns
 
 ---
 
@@ -122,7 +132,7 @@ Tested against 10 known regulatory questions before deployment.
 | Metric | Result |
 |--------|--------|
 | Citation accuracy | 9/10 answers correctly sourced |
-| Hallucination rate | 0% — all answers verifiable against source documents |
+| Hallucination rate | 0% â€” all answers verifiable against source documents |
 | Average response time | ~3 seconds (Groq inference) |
 | Retrieval precision | Top-3 chunks relevant in 9/10 queries |
 
@@ -132,18 +142,18 @@ Tested against 10 known regulatory questions before deployment.
 
 ```
 fraud-rag/
-├── app/
-│   ├── __init__.py
-│   └── main.py           # FastAPI endpoints (/ask, /explain)
-├── rag/
-│   ├── __init__.py
-│   ├── ingest.py         # Document loading, chunking, ChromaDB build
-│   ├── retriever.py      # ChromaDB similarity search with metadata
-│   └── chain.py          # LangChain + Groq RAG chain
-├── app.py                # Gradio UI (HuggingFace Spaces)
-├── requirements.txt
-├── .gitignore
-└── README.md
+â”œâ”€â”€ app/
+â”‚   â”œâ”€â”€ __init__.py
+â”‚   â””â”€â”€ main.py           # FastAPI endpoints (/ask, /explain)
+â”œâ”€â”€ rag/
+â”‚   â”œâ”€â”€ __init__.py
+â”‚   â”œâ”€â”€ ingest.py         # Document loading, chunking, ChromaDB build
+â”‚   â”œâ”€â”€ retriever.py      # ChromaDB similarity search with metadata
+â”‚   â””â”€â”€ chain.py          # LangChain + Groq RAG chain
+â”œâ”€â”€ app.py                # Gradio UI (HuggingFace Spaces)
+â”œâ”€â”€ requirements.txt
+â”œâ”€â”€ .gitignore
+â””â”€â”€ README.md
 ```
 
 ---
@@ -206,7 +216,7 @@ uvicorn app.main:app --reload --port 8001
 | `/health` | GET | API health check |
 | `/docs` | GET | Interactive Swagger UI |
 
-**Example — /ask:**
+**Example â€” /ask:**
 
 ```bash
 curl -X POST http://localhost:8001/ask \
@@ -214,7 +224,7 @@ curl -X POST http://localhost:8001/ask \
   -d '{"question": "What makes a transaction suspicious under RBI guidelines?", "k": 3}'
 ```
 
-**Example — /explain (connects to Fraud Detection API output):**
+**Example â€” /explain (connects to Fraud Detection API output):**
 
 ```bash
 curl -X POST http://localhost:8001/explain \
@@ -229,7 +239,7 @@ curl -X POST http://localhost:8001/explain \
 
 ---
 
-## Related Project — End-to-End Fraud Intelligence System
+## Related Project â€” End-to-End Fraud Intelligence System
 
 > Fraud Detection API (90% precision, 0.9798 ROC-AUC) + Fraud Compliance RAG (0% hallucination, section-level citations) = complete fraud intelligence pipeline.  
 > **Detection tells you what is fraud. The RAG tells you why it's fraud under the law.**
@@ -237,54 +247,54 @@ curl -X POST http://localhost:8001/explain \
 This RAG system is the second half of a two-part fraud intelligence pipeline built alongside the Fraud Detection REST API:
 
 ```
-┌─────────────────────────────────────┐
-│      FRAUD DETECTION REST API       │
-│   XGBoost + FastAPI + Docker        │
-│   90% precision · 0.9798 ROC-AUC   │
-│   Flags: V14=-4.28, prob=0.999      │
-└─────────────────┬───────────────────┘
-                  │  flagged features passed to /explain
-                  ▼
-┌─────────────────────────────────────┐
-│       FRAUD COMPLIANCE RAG          │
-│   LangChain + Groq + ChromaDB       │
-│   Retrieves FATF Ch.3, RBI Sec.12  │
-│   Returns regulatory justification  │
-└─────────────────┬───────────────────┘
-                  │
-                  ▼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚      FRAUD DETECTION REST API       â”‚
+â”‚   XGBoost + FastAPI + Docker        â”‚
+â”‚   90% precision Â· 0.9798 ROC-AUC   â”‚
+â”‚   Flags: V14=-4.28, prob=0.999      â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                  â”‚  flagged features passed to /explain
+                  â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚       FRAUD COMPLIANCE RAG          â”‚
+â”‚   LangChain + Groq + ChromaDB       â”‚
+â”‚   Retrieves FATF Ch.3, RBI Sec.12  â”‚
+â”‚   Returns regulatory justification  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                  â”‚
+                  â–¼
   "Under FATF Typologies Ch.3, extreme V14
    deviations indicate card testing fraud.
    RBI Section 12 requires STR filing
    within 7 days of detection."
-                  │
-                  ▼
-┌─────────────────────────────────────┐
-│         COMPLIANCE OFFICER          │
-│  Detection + regulation citation    │
-│  in one automated workflow          │
-└─────────────────────────────────────┘
+                  â”‚
+                  â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚         COMPLIANCE OFFICER          â”‚
+â”‚  Detection + regulation citation    â”‚
+â”‚  in one automated workflow          â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
-Together these two projects form a complete fintech compliance workflow — detection, explanation, and regulatory obligation — at entry level. That combination is rare.
+Together these two projects form a complete fintech compliance workflow â€” detection, explanation, and regulatory obligation â€” at entry level. That combination is rare.
 
-**Fraud Detection API:** github.com/shyam16843/fraud-api · [Live Swagger UI](https://fraud-api-ul6d.onrender.com/docs)
+**Fraud Detection API:** github.com/shyam16843/fraud-api Â· [Live Swagger UI](https://fraud-api-ul6d.onrender.com/docs)
 
 ---
 
 ## Use Cases
 
-**Fraud Analyst — transaction review**  
-A fraud analyst receives an alert from the detection system: transaction flagged at 99.9% probability. They paste the flagged features into `/explain` and get immediate regulatory context — which FATF typology applies, which RBI section governs reporting, and the STR filing deadline. What previously required manually searching regulatory PDFs takes 3 seconds.
+**Fraud Analyst â€” transaction review**  
+A fraud analyst receives an alert from the detection system: transaction flagged at 99.9% probability. They paste the flagged features into `/explain` and get immediate regulatory context â€” which FATF typology applies, which RBI section governs reporting, and the STR filing deadline. What previously required manually searching regulatory PDFs takes 3 seconds.
 
-**Compliance Officer — regulation Q&A**  
-A compliance officer needs to brief leadership on what constitutes a suspicious transaction under Indian banking law. They use the `/ask` endpoint to query across RBI, FATF, and SEBI simultaneously and get a cited, structured answer — no manual document search required.
+**Compliance Officer â€” regulation Q&A**  
+A compliance officer needs to brief leadership on what constitutes a suspicious transaction under Indian banking law. They use the `/ask` endpoint to query across RBI, FATF, and SEBI simultaneously and get a cited, structured answer â€” no manual document search required.
 
-**Fintech Developer — model explainability**  
-A developer building a fraud detection system needs to explain model decisions to a regulator. The `/explain` endpoint provides regulatory grounding for why specific transaction features (V14, V12, V10) are considered suspicious — turning a black-box ML output into a regulatorily-grounded decision.
+**Fintech Developer â€” model explainability**  
+A developer building a fraud detection system needs to explain model decisions to a regulator. The `/explain` endpoint provides regulatory grounding for why specific transaction features (V14, V12, V10) are considered suspicious â€” turning a black-box ML output into a regulatorily-grounded decision.
 
-**Risk & Audit Teams — policy research**  
-Teams conducting periodic AML/KYC audits can query the system to verify current regulatory obligations across jurisdictions — RBI for India, FATF for international, PCI-DSS for payment networks — without maintaining separate document repositories.
+**Risk & Audit Teams â€” policy research**  
+Teams conducting periodic AML/KYC audits can query the system to verify current regulatory obligations across jurisdictions â€” RBI for India, FATF for international, PCI-DSS for payment networks â€” without maintaining separate document repositories.
 
 ---
 
@@ -292,18 +302,18 @@ Teams conducting periodic AML/KYC audits can query the system to verify current 
 
 This project is portfolio-grade and production-architectured. For a real fintech deployment, extend with:
 
-- **Full PDF ingestion** — replace embedded regulation strings with live PDF parsing of official RBI/SEBI/FATF documents; re-ingest on schedule when regulations update
-- **Authentication & rate limiting** — API key auth via FastAPI Security dependency; per-key rate limits to prevent abuse
-- **Audit logging** — log every query, retrieved chunk, and generated answer with timestamps for compliance traceability
-- **Scheduled regulation updates** — cron job to re-ingest documents when new RBI Master Directions or FATF typologies are published
-- **Retrieval evaluation pipeline** — automated test suite that runs weekly against known Q&A pairs to catch retrieval drift
-- **Vector store scaling** — migrate from ChromaDB to Pinecone or Weaviate for multi-user concurrent access
+- **Full PDF ingestion** â€” replace embedded regulation strings with live PDF parsing of official RBI/SEBI/FATF documents; re-ingest on schedule when regulations update
+- **Authentication & rate limiting** â€” API key auth via FastAPI Security dependency; per-key rate limits to prevent abuse
+- **Audit logging** â€” log every query, retrieved chunk, and generated answer with timestamps for compliance traceability
+- **Scheduled regulation updates** â€” cron job to re-ingest documents when new RBI Master Directions or FATF typologies are published
+- **Retrieval evaluation pipeline** â€” automated test suite that runs weekly against known Q&A pairs to catch retrieval drift
+- **Vector store scaling** â€” migrate from ChromaDB to Pinecone or Weaviate for multi-user concurrent access
 
-The current architecture is designed to make all of these extensions straightforward — the `ingest.py` / `retriever.py` / `chain.py` separation means each layer can be upgraded independently.
+The current architecture is designed to make all of these extensions straightforward â€” the `ingest.py` / `retriever.py` / `chain.py` separation means each layer can be upgraded independently.
 
 ---
 
 ## Author
 
-**Ghanashyam T V** — NLP + MLOps Engineer  
-[GitHub](https://github.com/shyam16843) · [LinkedIn](https://linkedin.com/in/ghanashyam-tv) · [Fraud Detection API](https://fraud-api-ul6d.onrender.com/docs)
+**Ghanashyam T V** â€” NLP + MLOps Engineer  
+[GitHub](https://github.com/shyam16843) Â· [LinkedIn](https://linkedin.com/in/ghanashyam-tv) Â· [Fraud Detection API](https://fraud-api-ul6d.onrender.com/docs)
