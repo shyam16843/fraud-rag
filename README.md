@@ -1,13 +1,3 @@
----
-title: Fraud Compliance RAG
-colorFrom: blue
-colorTo: green
-sdk: gradio
-sdk_version: "5.29.0"
-app_file: app.py
-pinned: false
-license: mit
----
 # 🏦 Fraud Compliance RAG
 
 A regulatory intelligence system that answers fraud compliance questions using RBI, PCI-DSS, FATF, and SEBI guidelines — and explains why a fraud detection model flagged a transaction, with exact regulatory citations.
